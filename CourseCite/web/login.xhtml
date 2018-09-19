@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="css.css"/>
+    </h:head>
+    <h:body>
+ <div class="login">
+        <center>
+            
+            <p:panel header="Login">
+                <h:form>
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="User Name" ></p:outputLabel>
+                    <p:inputText value="#{loginbean.name}"/>
+                    
+                    <p:outputLabel value="Passward" ></p:outputLabel>
+                    <p:password value="#{loginbean.pass}"/> 
+                    
+                    
+                     <p:outputLabel value="" ></p:outputLabel>
+                     <p:commandButton action="#{loginbean.login()}" update="msg" value="Login"></p:commandButton>
+                    
+                </h:panelGrid>
+                    
+                </h:form>
+                <p:outputLabel id="msg" class="msg" value="#{loginbean.msg}" ></p:outputLabel>
+               
+            </p:panel>
+            
+            
+        </center>
+            </div>
+       
+    </h:body>
+</html>
+

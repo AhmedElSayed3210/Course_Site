@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+       <h:outputStylesheet library="css" name="css.css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+
+           <div class="header">
+                 <h:form>
+                     <p:commandLink action="index?faces-redirect=true" class="link" value="Home"  ></p:commandLink>
+                <p:commandLink action="login?faces-redirect=true" class="link" value="Login" style="color: white"></p:commandLink>
+                </h:form>
+
+            </div>
+
+            <div class="con">
+                <center>
+                    <p:panel header="Apply For #{displaybean.cname} Course">
+
+                        <h:form>
+                            <h:panelGrid columns="1" cellpadding="10px">
+
+                                <p:inputText id="u" value="#{displaybean.sname}" required="true" placeholder="Name"></p:inputText>
+                                
+                                <p:inputText  value="#{displaybean.phone}" required="true" placeholder="Phone"></p:inputText>
+                                <p:inputText  value="#{displaybean.mail}" required="true" placeholder="Mail"></p:inputText>
+                                <p:inputText  value="#{displaybean.eduction}" required="true" placeholder="Eduction"></p:inputText>
+                                <p:commandButton action="#{displaybean.addstudent()}"  update="msg" value="Apply"></p:commandButton>
+
+                            </h:panelGrid>
+                        </h:form>
+                        <p:outputLabel value="#{displaybean.msg}" id ="msg" class="msg" ></p:outputLabel>
+
+                    </p:panel>
+                </center>
+            </div>
+
+
+
+            <div class="footer"><center>&copy;Ahmed ElSayed</center></div>
+
+        </div>
+    </h:body>
+</html>
+
